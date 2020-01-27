@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import './data';
+import Data from './components/data';
+
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -11,7 +12,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <h1 className="Header">StarWars Planets</h1>
+      <Data />
     </div>
   );
 };
