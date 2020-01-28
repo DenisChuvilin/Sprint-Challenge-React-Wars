@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import { Collapse, Button, CardBody, Card, CardTitle, ListGroup, ListGroupItem, Container, Col, Row } from 'reactstrap';
+import {
+  Collapse,
+  Button,
+  CardBody,
+  Card,
+  CardTitle,
+  ListGroup,
+  ListGroupItem,
+  Container,
+  Col,
+  Row,
+  CardDeck,
+} from 'reactstrap';
 
 const Example = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,32 +20,29 @@ const Example = props => {
 
   return (
     <div>
-      <Container className="themed-container">
-        <Row>
+      <CardDeck>
+        <Card>
           {' '}
-          <Col>
-            <Card>
-              <CardTitle>{props.name}</CardTitle>
-
-              <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>
-                Details
-              </Button>
-              <Collapse isOpen={isOpen}>
-                <Card>
-                  <CardBody>
-                    <ListGroup>
-                      <ListGroupItem>Diameter: {props.diameter}</ListGroupItem>
-                      <ListGroupItem>Climate: {props.climate}</ListGroupItem>
-                      <ListGroupItem>Terrain: {props.terrain}</ListGroupItem>
-                      <ListGroupItem>Gravity: {props.gravity}</ListGroupItem>
-                    </ListGroup>
-                  </CardBody>
-                </Card>
-              </Collapse>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+          <CardBody>
+            <CardTitle>{props.name}</CardTitle>
+            <Button color="primary" onClick={toggle} style={{ marginBottom: '1rem' }}>
+              Details
+            </Button>
+            <Collapse isOpen={isOpen}>
+              <Card>
+                <CardBody>
+                  <ListGroup>
+                    <ListGroupItem>Diameter: {props.diameter}</ListGroupItem>
+                    <ListGroupItem>Climate: {props.climate}</ListGroupItem>
+                    <ListGroupItem>Terrain: {props.terrain}</ListGroupItem>
+                    <ListGroupItem>Gravity: {props.gravity}</ListGroupItem>
+                  </ListGroup>
+                </CardBody>
+              </Card>
+            </Collapse>
+          </CardBody>
+        </Card>
+      </CardDeck>
     </div>
   );
 };
