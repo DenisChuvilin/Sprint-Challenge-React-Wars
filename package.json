@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "react-scripts": "^3.3.0",
+    "reactstrap": "^8.4.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.10"
+  }
+}
